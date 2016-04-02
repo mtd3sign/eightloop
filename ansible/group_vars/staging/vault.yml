@@ -8,16 +8,16 @@ vault_sudoer_passwords:
 # Variables to accompany `group_vars/staging/wordpress_sites.yml`
 # Note: the site name (`example.com`) must match up with the site name in the above file.
 vault_wordpress_sites:
-  example.com:
+  eightloop.io:
     env:
       db_password: example_dbpassword
       # Generate your keys here: https://api.wordpress.org/secret-key/1.1/salt/
       # These CANNOT contain the characters "{%" or "{{" in succession
-      auth_key: "generateme"
-      secure_auth_key: "generateme"
-      logged_in_key: "generateme"
-      nonce_key: "generateme"
-      auth_salt: "generateme"
-      secure_auth_salt: "generateme"
-      logged_in_salt: "generateme"
-      nonce_salt: "generateme"
+      auth_key: jB;;g^/yQN7QKZJ)7*yL|oklRP8_&3h~lIvQ@$XLS#R1lJ=m|L1_Y>Z>=Rdj,;SA
+      secure_auth_key: ;AZ@I>-/>+/U:C5zx=Y-^stGQCy]8bc[?@&X,@Q7u2!>n$5w||ck&:DT{~#q?H2z
+      logged_in_key: $,;yzZF8o{wQM>t+|:T5a@m.^_|tva*B{>s^IM/W+wp2e%Wc6D#(vJ2*>-r9d?1#
+      nonce_key: 2OhFy`PWzG0{~Zq7GpEtFS{/ujttGJZ`p^Oh >-EmgAZ|2>+r}J`O,)(GNy:6V}f
+      auth_salt: DopgQHJx+>btG@*LV%i]8u<NcAy+bml.0pi0z)Sq/%ou@r,8zBZj@y,2ape05T_*
+      secure_auth_salt: P?j+-j?P92S$(<SN8~I- D}hhAb3HjLY^Jk#D~8+1*rz#8HpN:-05&7{B]=HsAIP
+      logged_in_salt: du[;^f0tfd~hX|=_ LW|+&]]+!r|++#-kT1qyFEZ+/VWeEkKaq|;SN+?-cIQnLGF
+      nonce_salt: u~-!`&h|v-qHCLr>=X*%3s>Kbcj(.,qcIyv-ztS8=h4#+$Z;6k`<]*vI|mLQH&`>

@@ -5,9 +5,9 @@
 wordpress_sites:
   eightloop.io:
     site_hosts:
-      - test-eightloop.dev
+      - eightloop.dev
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
-    admin_email: admin@example.dev
+    admin_email: hello@eightloop.io
     multisite:
       enabled: false
     ssl:

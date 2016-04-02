@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [web]
-178.62.73.131
+188.166.170.38
 
 [production]
-[eightloop.io:children]
+188.166.170.38
