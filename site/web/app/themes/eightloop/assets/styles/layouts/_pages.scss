@@ -1,0 +1,68 @@
+.header-container {
+  background-color: $grey-100;
+}
+
+.page-header {
+  padding-left: 20px;
+  margin-top: 73px;
+  @include media ( min-width $header-padding ) {
+    padding-left: 0;
+  }
+  @include span-columns(12);
+  h1 {
+    padding-top: 1em;
+    color: $grey-700;
+  }
+  p {
+    @extend h3;
+    font-family: $ff-tisa;
+    @include span-columns(11);
+    @include media ( min-width $break-medium ) {
+      @include span-columns(8);
+    }
+    font-size: 1.375em;
+    line-height: 1.136em;
+    font-weight: 500;
+    color: $grey-500;
+    @include media ( min-width $break-medium ) {
+      font-size: 1.5em;
+      line-height: 1.25em;
+    }
+    @include media ( min-width $break-large ) {
+      font-size: 1.75em;
+      line-height: 1.25em;
+    }
+  }
+}
+
+.post-header {
+  padding-left: 20px;
+  margin-top: 73px;
+  @include media ( min-width $header-padding ) {
+    padding-left: 0;
+  }
+  @include span-columns(12);
+  h1 {
+    padding-top: 40px;
+    color: $orange-A100;
+  }
+  p {
+    @include span-columns(11);
+    @include media ( min-width $break-medium ) {
+      @include span-columns(8);
+    }
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 1.375em;
+    line-height: 1.136em;
+    font-weight: 500;
+    color: $grey-300;
+    @include media ( min-width $break-medium ) {
+      font-size: 1.5em;
+      line-height: 1.25em;
+    }
+    @include media ( min-width $break-large ) {
+      font-size: 1.75em;
+      line-height: 1.25em;
+    }
+  }
+}
