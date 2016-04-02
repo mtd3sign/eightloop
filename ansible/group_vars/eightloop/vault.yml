@@ -1,0 +1,23 @@
+# Documentation: https://roots.io/trellis/docs/vault/
+vault_mysql_root_password: ?{Za@)6au~?nN^/p@8U1]FGucXDB*SJ(`e!0xkD3JcWa*+7Zs*IPoG~tfX^k]Y`*
+
+# Documentation: https://roots.io/trellis/docs/security/
+vault_sudoer_passwords:
+  admin: $6$rounds=100000$JUkj1d3hCa6uFp6R$3rZ8jImyCpTP40e4I5APx7SbBvDCM8fB6GP/IGOrsk/GEUTUhl1i/Q2JNOpj9ashLpkgaCxqMqbFKdZdmAh26/
+
+# Variables to accompany `group_vars/production/wordpress_sites.yml`
+# Note: the site name (`example.com`) must match up with the site name in the above file.
+vault_wordpress_sites:
+  eightloop.io:
+    env:
+      db_password: i7jh!Dn-N*wF=_<-W}C ]+H-YdUH_U$xh~{sriKxuWlD-dpm@CaEf&#t]Dc,#?Bz
+      # Generate your keys here: https://api.wordpress.org/secret-key/1.1/salt/
+      # These CANNOT contain the characters "{%" or "{{" in succession
+      auth_key: P/R+#mLJ(v `pjHW7XksenFqnXWc8/o=c$FlwJUTW?GphDseb|a=aoxKc%ZyTA{|
+      secure_auth_key: +yvm`L0&g_jD88R9CDc6fT^Ac{1eX`k|{;XyQ>NTJwcyL hRvx4Tba]1*OaBr;}#
+      logged_in_key: qgVJv9~n5x.pHw~C--A4X%=+Q5<])%~Ssj$We!WbVoST2*ab<iB[n&+dOc%C$=6o
+      nonce_key: T$-IWfTj,:-sh}+M_g5Z==[J<PKUxY(mm?K?rvC@A3RZ=[F7-`7_lrNLt9m~p]M|
+      auth_salt: dhcP=p;%?3OHPA9EtK,<WC/+Jcv}|/ hG||S+p<Z-9^[XlYI#c|U#tnsZY&ZM/GW
+      secure_auth_salt: ip(Lr3yL!i|of?mqc4hh QOK7z@{y)%*Egrwl*|^NT6JZ.2~j* 4 5+?Q(&Xy;+.
+      logged_in_salt: O&e]#|iErT.zuD!?8t}-tg=|<StFFp`I{HHI8_j`,VOPM6X01nVqVIk<u?$^m=_t
+      nonce_salt: Ez|VI6L<n=Ium-KK(%N6H!bEU[JWMhy;=BS|-.}i>H#yHUiS$|.xw9[^*!Sk]]Hl
