@@ -1,0 +1,115 @@
+$br-gro : "brandon-grotesque", sans-serif;
+$ff-tisa : "ff-tisa-web-pro", serif;
+
+h1 {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 2em;
+  font-weight: 500;
+  color: $text-dark;
+  line-height: 1.25em;
+  @include media ( min-width $break-medium ) {
+    font-size: 2.5em;
+    line-height: 1.125em;
+  }
+  @include media ( min-width $break-large ) {
+    font-size: 3em;
+    line-height: 1.05em;
+  }
+}
+
+h2 {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 1.625em;
+  line-height: 1.154em;
+  font-weight: 500;
+  color: $text-dark;
+  @include media ( min-width $break-medium ) {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+  @include media ( min-width $break-large ) {
+    font-size: 2.25em;
+    line-height: 1.25em;
+  }
+}
+
+h3 {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 1.375em;
+  line-height: 1.136em;
+  font-weight: 500;
+  color: $text-dark;
+  @include media ( min-width $break-medium ) {
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+  @include media ( min-width $break-large ) {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+}
+
+h4 {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 1.125em;
+  line-height: 1.111em;
+  font-weight: 500;
+  color: $text-dark;
+  @include media ( min-width $break-medium ) {
+    font-size: 1.125em;
+    line-height: 1.222em;
+  }
+}
+
+p {
+  font-family: "ff-tisa-web-pro", serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: $text-dark;
+  line-height: 1.25em;
+  @include media ( min-width $text-medium ) {
+    line-height: 1.375em;
+  }
+}
+
+nav ul li a {
+  @include transition();
+	font-family: "brandon-grotesque", serif;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: $grey-700;
+  border: 1px solid $grey-50;
+  &:hover {
+    border: 1px solid $grey-700;
+  	color: $grey-700;
+    background-color: $grey-50;
+  }
+}
+
+// header.sticky {
+//   a {
+//     color: $grey-500;
+// 	@include transition();
+//     }
+//     .btn-open:after {
+//     	color: $grey-500;
+// 	@include transition();
+//     }
+// }
+
+.title-highlight {
+  color: $orange-A200;
+}
+
+.title-dark {
+  color: $grey-800;
+}
+
+.title-medium {
+  color: $grey-600;
+}
+
+
+
+//  @include media ( min-width $text-medium ) {

@@ -1,0 +1,73 @@
+// .skills-outer {
+//   @include clearfix;
+//   width: 100%;
+//   margin-top: 20px;
+// }
+
+.skills-outer {
+  @include clearfix;
+  @include outer-container();
+  @include shift(0);
+  margin-top: 20px;
+}
+
+.skills {
+  @include outer-container();
+  @include clearfix;
+  border-top: 2px solid #ffffff;
+}
+
+.skills-outer-design {
+    width: 100%;
+  background-color: $grey-700;
+}
+
+.skills-outer-development {
+    width: 100%;
+  background-color: $grey-300;
+}
+
+.design {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  @include span-columns(12);
+  height: auto;
+  float: left;
+  @include media(min-width $break-small) {
+    @include span-columns(6);
+    padding-left: 40px;
+
+  } p , h2 {
+  color: $grey-50;
+}}
+
+.development {
+  padding-top: 20px;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  @include span-columns(12);
+  @include media( min-width $break-medium) {
+    @include span-columns(6);
+    float: right;
+  }
+}
+
+.design-image {
+  @include span-columns(12);
+  float: right;
+  @include media(min-width $break-small) {
+    @include span-columns(6);
+  }
+}
+
+.development-image {
+  height: 300px;
+  @include span-columns(12);
+  background-color: #369;
+  float: left;
+  @include media(min-width $break-medium) {
+    @include span-columns(6);
+  }
+}

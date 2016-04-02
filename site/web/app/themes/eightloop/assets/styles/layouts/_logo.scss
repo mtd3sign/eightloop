@@ -1,0 +1,63 @@
+.container-logo {
+  // padding-top: 41px;
+  width: 100%;
+  background-color: $grey-100;
+  border-top: 2px solid #ffffff;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.logo-inner {
+  @include outer-container($max-width);
+  position: relative;
+  height: 180px;
+  .logo img {
+    opacity: 0.8;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+header .logo img {
+  @include media ( max-width $break-medium ) {
+    display: none;
+  }
+  @include media ( min-width $break-medium ) {
+    height: 55px;
+
+    display:inline;
+    position:absolute;
+    left:30px;
+    top:10px;
+    z-index:999;
+  }
+}
+
+.overlay .wrap img {
+  margin-top: 40px;
+  height: 100px;
+  position: relative;
+    @include media ( min-width $break-medium ) {
+      display: none;
+    }
+}
+
+#container-space {
+  // padding-top: 41px;
+  display: none;
+  width: 100%;
+  background-color: $grey-300;
+  border-top: 2px solid #ffffff;
+  height:60px;
+  @include media ( min-width $break-medium ) {
+    height: 45px;
+    display: none;
+  }
+}
