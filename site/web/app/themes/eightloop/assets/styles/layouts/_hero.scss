@@ -158,6 +158,7 @@
       font-weight: 500;
         @include media ( min-width $break-large ) {
           @extend h1;
+          font-size: 4rem;
         }
     }
     hr.hero {

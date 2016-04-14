@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '841f98c5d948ce534a6f87abe5b50614' => $vendorDir . '/roots/wp-password-bcrypt/wp-password-bcrypt.php',
+    $vendorDir . '/roots/wp-password-bcrypt/wp-password-bcrypt.php',
 );
