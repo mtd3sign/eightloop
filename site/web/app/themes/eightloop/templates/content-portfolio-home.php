@@ -6,7 +6,7 @@
 
   $args = array(
     'post_type' => 'portfolio',
-    'posts_per_page' => '3',
+    'posts_per_page' => '2',
   );
 
   $query = new WP_Query($args);
@@ -22,17 +22,16 @@
         <div class="portfolio-item">
 
           <?php
-                        $image = get_field('portfolio_featured_image');
-                        if( !empty($image) ):
-                      ?>
+            $image = get_field('portfolio_featured_image');
+            if( !empty($image) ):
+          ?>
             <!-- <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> -->
-            <img src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" />
+            <img class="portfolio-image" src="https://unsplash.it/900/450/?random" alt="<?php echo $image['alt']; ?>" />
             <?php endif; ?>
-            <div class="portfolio-item-text">
-              <h3>
-                        <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a>
-                      </h3>
-            </div>
+
+            <!-- <div class="portfolio-item-text">
+              <h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
+            </div> -->
             <a href="<?php the_permalink(); ?>">
               <div class="portfolio-item-overlay">
                 <h3>
@@ -46,7 +45,6 @@
             </a>
 
         </div>
-
 
         <?php endwhile; endif; ?>
         <?php wp_reset_postdata(); ?>

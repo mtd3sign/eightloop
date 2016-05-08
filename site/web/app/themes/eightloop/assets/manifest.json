@@ -16,6 +16,11 @@
         "scripts/flexslider.js"
       ]
     },
+    "masonry.pkgd.min.js": {
+      "files": [
+        "scripts/masonry.pkgd.min.js"
+      ]
+    },
     "main.css": {
       "files": [
         "styles/main.scss"

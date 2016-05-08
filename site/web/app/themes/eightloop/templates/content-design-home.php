@@ -6,7 +6,7 @@
 
   $args = array(
        'post_type' => 'design',
-       'posts_per_page' => 3,
+       'posts_per_page' => 2,
        );
 
   $query = new WP_Query($args);
@@ -28,13 +28,13 @@
                   if( !empty($image) ):
                 ?>
       <!-- <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> -->
-      <img src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" />
+      <img class="design-image" src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" />
       <?php endif; ?>
-      <div class="design-item-text">
+      <!-- <div class="design-item-text">
         <h3>
                   <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a>
                 </h3>
-      </div>
+      </div> -->
       <a href="<?php the_permalink(); ?>">
         <div class="design-item-overlay">
           <h3>

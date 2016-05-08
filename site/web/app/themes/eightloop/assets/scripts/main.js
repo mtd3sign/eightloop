@@ -106,16 +106,42 @@ if ($(this).scrollTop() > 1){
 });
 
 /* ========================================================================
+ * Masonry
+ * ======================================================================== */
+
+$(document).ready(function(){
+  $('.grid').masonry({
+   // options
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition: true
+  });
+});
+
+/* ========================================================================
+ * Overlay-resize
+ * ======================================================================== */
+
+// function Overlay() {
+//     $('.portfolio-item-overlay').css({
+//       height: $('.portfolio-item').height()
+//   });
+// }
+// Overlay();
+
+// $('.portfolio-item-overlay').find('img').on('load', resizeOverlay);
+
+/* ========================================================================
  * Slider
  * ======================================================================== */
 
- $(document).ready(function(){
+$(document).ready(function(){
    $('#logo').fadeTo('fast', 0.8);
    $('#logo').delay(2000).fadeTo('slow', 0);
    $('#text').delay(2500).fadeTo('slow', 1.0);
  });
 
- $(document).ready(function(){
+$(document).ready(function(){
    $('#show').delay(2500).fadeTo('slow', 1);
  });
 

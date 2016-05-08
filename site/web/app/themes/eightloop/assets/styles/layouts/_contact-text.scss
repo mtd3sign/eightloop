@@ -1,0 +1,38 @@
+.container-contact {
+  padding-top: 41px;
+  padding-bottom: 41px;
+  width: 100%;
+  background-color: $grey-50;
+  @include outer-container($max-width);
+}
+
+.contact-text-inner {
+
+  @include span-columns(10);
+  @include shift(1);
+  @include clearfix();
+}
+
+.contact-text {
+  @include span-columns(10);
+  @include shift(1);
+  @include clearfix();
+  h2 {
+    margin-bottom: 0;
+    text-align: center;
+    // font-family: $ff-tisa;
+    color: $grey-500;
+    font-weight: 500;
+      @include media ( min-width $break-large ) {
+        font-family: "brandon-grotesque", sans-serif;
+        font-size: 2em;
+        font-weight: 300;
+        line-height: 1.25em;;
+      }
+      a {
+        &:hover {
+          color: $orange-A200;
+        }
+      }
+  }
+}
