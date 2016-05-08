@@ -12,7 +12,7 @@
 
 ?>
 
-<div class="portfolio-home">
+<div class="page-portfolio">
 
   <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -25,13 +25,13 @@
                   if( !empty($image) ):
                 ?>
       <!-- <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> -->
-      <img src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" />
+      <img class="portfolio-image" src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" />
       <?php endif; ?>
-      <div class="portfolio-item-text">
+      <!-- <div class="portfolio-item-text">
         <h3>
                   <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a>
                 </h3>
-      </div>
+      </div> -->
       <a href="<?php the_permalink(); ?>">
         <div class="portfolio-item-overlay">
           <h3>

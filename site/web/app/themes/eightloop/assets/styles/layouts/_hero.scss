@@ -70,7 +70,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 0;
+        top: 50px;
         bottom: 0;
         margin: auto;
         width: 8em;
@@ -155,7 +155,7 @@
       margin-bottom: 0;
       // font-family: $ff-tisa;
       color: $grey-50;
-      font-weight: 500;
+      font-weight: 300;
         @include media ( min-width $break-large ) {
           font-family: "brandon-grotesque", sans-serif;
           font-size: 2em;
