@@ -5,7 +5,7 @@
       <li>|</li>
       <a href="mailto:hello@eightloop.io"><li>hello@eightloop.io</li>
       <li>|</li>
-      <a href="https://twitter.com/_eightloop" target="_blank"><li>@_eightloop</li></a>
+      <a href="https://twitter.com/eightloopio" target="_blank"><li>@eightloopio</li></a>
     </ul>
     <hr>
     <p class="copyright">&copy; Mathew Thomas 2016</p>

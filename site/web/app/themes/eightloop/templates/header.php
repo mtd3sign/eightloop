@@ -24,31 +24,31 @@
       ?>
     </ul>
     <div class="social">
-      <a href="#">
+      <a href="https://twitter.com/eightloopio">
         <div class="social-icon">
           <i class="fa fa-twitter"></i>
         </div>
       </a>
-      <a href="#">
+      <a href="http://www.linkedin.com/in/mathew-thomas-57906152">
         <div class="social-icon">
           <i class="fa fa-linkedin"></i>
         </div>
       </a>
-      <a href="#">
+      <a href="https://www.flickr.com/photos/asthmaticwookie/">
         <div class="social-icon">
           <i class="fa fa-flickr"></i>
         </div>
       </a>
-      <a href="#">
+      <a href="mailto:hello@eightloop.io">
         <div class="social-icon">
           <i class="fa fa-envelope"></i>
         </div>
       </a>
-      <a href="#">
+      <!-- <a href="#">
         <div class="social-icon">
           <i class="fa fa-behance"></i>
         </div>
-      </a>
+      </a> -->
       <!-- <p>
         From: Zagreb, Croatia
         <br> Site: <a href="http://mario-loncarek.from.hr/">mario-loncarek.from.hr</a>
