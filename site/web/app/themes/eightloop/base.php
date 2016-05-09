@@ -25,9 +25,11 @@ use Roots\Sage\Wrapper;
         </aside><!-- /.sidebar -->
       <?php endif; ?>
     </div>
-    <?php get_template_part('templates/content', 'hero'); ?>
+
     <div id="content" role="document">
+
         <main class="main">
+            <?php get_template_part('templates/content', 'hero'); ?>
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
     </div><!-- /.wrap -->
