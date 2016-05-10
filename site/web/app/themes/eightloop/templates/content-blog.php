@@ -5,7 +5,7 @@
   <?php
 
   $args = array(
-    'post_type' => 'blog',
+    'post_type' => 'writing',
     'posts_per_page' => '6',
   );
 
