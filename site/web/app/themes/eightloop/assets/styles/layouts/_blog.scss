@@ -16,11 +16,14 @@
 
 .blog-item {
   @include span-columns(10);
+  @include shift(1);
   @include media ( min-width $break-medium ) {
   @include span-columns(8);
+  @include shift(2);
   }
   h2 {
-    margin-bottom: 0.5em;
+    text-align: center;
+    margin-top: 1em;
     a {
       color: $grey-500;
       &:hover {
@@ -28,12 +31,10 @@
       }
     }
   }
-  h3 {
-    margin-top: 2em;
-  }
 }
 
 .blog-date {
+    text-align: center;
     padding-bottom: 4em;
     font-family: "brandon-grotesque", sans-serif;
     font-weight: 400;

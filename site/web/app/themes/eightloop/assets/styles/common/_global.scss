@@ -47,14 +47,17 @@ body {
   h1 {
     padding-top: 40px;
     color: $grey-50;
+    text-align: center;
   }
   p {
     @extend h3;
     @include span-columns(11);
     @include media ( min-width $break-medium ) {
       @include span-columns(8);
+      @include shift(2);
     }
     font-size: 1.375em;
+    text-align: center;
     line-height: 1.136em;
     font-weight: 500;
     color: $grey-300;

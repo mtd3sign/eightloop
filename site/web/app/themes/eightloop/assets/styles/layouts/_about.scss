@@ -1,23 +1,40 @@
 .container-about-home {
-  border-top: 2px solid #ffffff;
+  border-top: 2px solid $grey-100;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: $grey-300;
+  background-color: $grey-50;
 }
 
 .about-home {
   @include outer-container();
   @include clearfix;
-  background-color: $grey-300;
+  background-color: $grey-50;
 }
 
 .about-item {
   @include span-columns(10);
   @include media ( min-width $break-medium ) {
   @include span-columns(8);
+  @include shift(2);
+  }
+  h2 {
+    margin-bottom: 0.5em; 
+    a {
+      color: $grey-500;
+      &:hover {
+        color: $orange-A100;
+      }
+    }
+  }
+}
+
+.about-option {
+  @include span-columns(10);
+  @include media ( min-width $break-medium ) {
+  @include span-columns(4);
   }
   h2 {
     margin-bottom: 0.5em;

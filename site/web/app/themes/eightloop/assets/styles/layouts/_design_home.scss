@@ -109,6 +109,8 @@
 
 .design-header {
 @include span-columns(10);
+@include shift(1);
+text-align: center;
 float: none;
 h3 {
 color: $grey-800;
@@ -122,6 +124,7 @@ font-family: $ff-tisa;
 
 .design-items {
   padding-top: 20px;
+  text-align: center;
   a {
     color: $grey-500;
     &:hover {
