@@ -6,7 +6,6 @@
 
   $args = array(
     'post_type' => 'writing',
-    'posts_per_page' => '6',
   );
 
   $query = new WP_Query($args);
@@ -20,9 +19,9 @@
                 $query->the_post();
                 echo '<div class="blog-item">';
                 echo '<h2><a href="'.get_the_permalink().'">'.get_the_title().'</a></h2>';
-                echo '<p>'.get_the_excerpt().'</p>';
-                echo '<p class="blog-date">'.get_the_date('F Y').'</p>';
-
+                echo '<p>'.get_the_content().'</p>';
+                echo '<p class="writing-blog-date">'.get_the_date('F Y').'</p>';
+                echo '<span class="blog-items"><h4><a href="'.get_the_permalink().'">See the full article</a></h4></span>';
                 // $image = get_field('image');
                 $image = 'https://unsplash.it/200/300/?random';
                 $size = 'full'; // (thumbnail, medium, large, full or custom size)

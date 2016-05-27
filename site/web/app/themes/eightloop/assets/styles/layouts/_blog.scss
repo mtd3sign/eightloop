@@ -15,6 +15,10 @@
 }
 
 .blog-item {
+  padding-bottom: 4em;
+  text-align: center;
+  -moz-text-align-last: center;
+  text-align-last: center;
   @include span-columns(10);
   @include shift(1);
   @include media ( min-width $break-medium ) {
@@ -33,13 +37,27 @@
   }
 }
 
-.blog-date {
+.writing-blog-date {
     text-align: center;
-    padding-bottom: 4em;
+    padding-bottom: 1em;
     font-family: "brandon-grotesque", sans-serif;
     font-weight: 400;
     line-height: 1.25em;
     @include media ( min-width $text-medium ) {
       line-height: 1.375em;
     }
+}
+
+.blog-items {
+  text-align: center;
+  a {
+    color: $grey-500;
+    &:hover {
+      color: $orange-A100;
+    }
+  }
+  h4 {
+    font-family: $ff-tisa;
+    margin-bottom: 0;
+  }
 }

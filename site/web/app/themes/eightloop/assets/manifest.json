@@ -16,6 +16,16 @@
         "scripts/flexslider.js"
       ]
     },
+    "featherlight.min.js": {
+      "files": [
+        "scripts/featherlight.min.js"
+      ]
+    },
+    "featherlight.gallery.min.js": {
+      "files": [
+        "scripts/featherlight.gallery.min.js"
+      ]
+    },
     "masonry.pkgd.min.js": {
       "files": [
         "scripts/masonry.pkgd.min.js"

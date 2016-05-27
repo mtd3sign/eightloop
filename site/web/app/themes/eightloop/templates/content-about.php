@@ -1,4 +1,4 @@
-<div class="container-about-home">
+  <div class="container-about-home">
 
   <div class="about-home">
 

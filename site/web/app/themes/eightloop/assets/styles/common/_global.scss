@@ -73,6 +73,7 @@ body {
 }
 
 .post-header {
+  text-align: center;
   padding-left: 20px;
   @include media ( min-width $header-padding ) {
     padding-left: 0;
@@ -86,6 +87,7 @@ body {
     @include span-columns(11);
     @include media ( min-width $break-medium ) {
       @include span-columns(8);
+      @include shift(2);
     }
     font-family: "brandon-grotesque", sans-serif;
     font-size: 1.375em;

@@ -15,13 +15,16 @@
 }
 
 .about-item {
+  text-align: center;
+  // -moz-text-align-last: center; /* Code for Firefox */
+  // text-align-last: center;
   @include span-columns(10);
   @include media ( min-width $break-medium ) {
   @include span-columns(8);
   @include shift(2);
   }
   h2 {
-    margin-bottom: 0.5em; 
+    margin-bottom: 0.5em;
     a {
       color: $grey-500;
       &:hover {
@@ -32,9 +35,19 @@
 }
 
 .about-option {
+  @include omega;
   @include span-columns(10);
+  @include shift(1);
   @include media ( min-width $break-medium ) {
-  @include span-columns(4);
+  text-align: left;
+  // -moz-text-align-last: center; /* Code for Firefox */
+  // text-align-last: center;
+  }
+  .about-option-image {
+    @include span-columns(6);
+  }
+  .about-option-text {
+    @include span-columns(6);
   }
   h2 {
     margin-bottom: 0.5em;
