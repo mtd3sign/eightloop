@@ -108,12 +108,14 @@ function assets() {
 function insert_jquery(){
   wp_enqueue_script('jquery', false, array(), false, false);
 }
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
   wp_enqueue_script('sage/slider', Assets\asset_path('scripts/sss.js'), ['jquery'], null, false);
   wp_enqueue_script('sage/flexslider', Assets\asset_path('scripts/flexslider.js'), ['jquery'], null, false);
   wp_enqueue_script('sage/masonry', Assets\asset_path('scripts/masonry.pkgd.min.js'), ['jquery'], null, false);
   wp_enqueue_script('sage/featherlight', Assets\asset_path('scripts/featherlight.min.js'), ['jquery'], null, false);
   wp_enqueue_script('sage/featherlight-gallery', Assets\asset_path('scripts/featherlight.gallery.min.js'), ['jquery'], null, false);
+  wp_enqueue_script('sage/images-loaded', Assets\asset_path('scripts/imagesloaded.pkgd.min.js'), ['jquery'], null, false);
+
+    wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

@@ -1,5 +1,5 @@
 .header-container {
-  background-color: $grey-100;
+  background-color: $white;
 }
 
 .page-header {
@@ -10,11 +10,13 @@
   }
   @include span-columns(12);
   h1 {
-    padding-top: 1em;
+    font-size: 5rem;
+    padding-top: 3rem;
     color: $grey-700;
+    margin-bottom: 2rem;
   }
   p {
-    @extend h3;
+    // @extend h3;
     font-family: $ff-tisa;
     @include span-columns(11);
     @include media ( min-width $break-medium ) {
@@ -24,14 +26,15 @@
     line-height: 1.136em;
     font-weight: 500;
     color: $grey-500;
-    @include media ( min-width $break-medium ) {
-      font-size: 1.5em;
-      line-height: 1.25em;
-    }
-    @include media ( min-width $break-large ) {
-      font-size: 1.75em;
-      line-height: 1.25em;
-    }
+    margin-bottom: 1rem;
+    // @include media ( min-width $break-medium ) {
+    //   font-size: 1.5em;
+    //   line-height: 1.25em;
+    // }
+    // // @include media ( min-width $break-large ) {
+    // //   font-size: 1.75em;
+    // //   line-height: 1.25em;
+    // // }
   }
 }
 

@@ -5,14 +5,14 @@
   padding-right: 20px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: $grey-300;
+  background-color: $white;
 
 }
 
 .portfolio-home {
   @include outer-container();
   @include clearfix;
-  background-color: $grey-300;
+  background-color: $white;
 }
 .page-portfolio {
   @include clearfix;

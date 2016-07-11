@@ -31,6 +31,11 @@
         "scripts/masonry.pkgd.min.js"
       ]
     },
+    "imagesloaded.pkgd.min.js": {
+      "files": [
+        "scripts/imagesloaded.pkgd.min.js"
+      ]
+    },
     "main.css": {
       "files": [
         "styles/main.scss"

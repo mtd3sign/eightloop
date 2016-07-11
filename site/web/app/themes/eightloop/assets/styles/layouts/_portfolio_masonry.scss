@@ -43,6 +43,8 @@
         }
       }
     }
+  
+    }
     // .portfolio-item-overlay {
     //   padding: 20px;
     //   transition: 0.3s all ease;
@@ -110,7 +112,7 @@
 }
 
 .portfolio-header {
-  @include span-columns(10);
+  @include span-columns(40);
   h3 {
     color: $grey-500;
     font-family: $ff-tisa;
@@ -137,12 +139,12 @@
   }
 }
 
-.grid-sizer,
-.grid-item {
-  width: 50%;
-}
-
-.grid-item {
-  height: auto;
-  float: left;
-}
+// .portfolio-gallery {
+//   img {
+//     opacity: 0.8;
+//     &:hover {
+//       opacity: 1;
+//
+//     }
+//   }
+// }

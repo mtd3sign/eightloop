@@ -30,6 +30,7 @@ use Roots\Sage\Wrapper;
         <main class="main">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
+
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
