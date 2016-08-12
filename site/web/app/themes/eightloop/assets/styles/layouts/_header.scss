@@ -1,0 +1,262 @@
+/* =========================================================
+ * Header Styles
+========================================================= */
+header {
+	@include transition();
+	position: fixed;
+	width: 100%;
+	background-color: $grey-50;
+	z-index: 10;
+	border-bottom: 2px solid $grey-300;
+}
+
+header .space {
+	// @include transition();
+	height: 63px;
+}
+
+ul {
+	// @include transition();
+	padding:1rem;
+	text-decoration:none;
+	list-style:none;
+}
+li {
+	// @include transition();
+	padding:0;
+}
+nav {
+	// @include transition();
+	text-align:left;
+	width:100%;
+	position:relative;
+	height:auto;
+	overflow:hidden;
+	background:none;
+}
+nav ul {
+	text-align:center;
+	// @include span-columns(11);
+	// @include shift(1);
+}
+nav ul li {
+	display:inline-block;
+}
+nav ul li a {
+	display:inline-block;
+	padding:0.6em 3em 0.4em 3em;
+	text-decoration:none;
+		// border-bottom:2px solid #fff;
+	@include transition();
+}
+
+
+header {
+	@include media( max-width 704px ) {
+		height: 60px;
+		background-color: $grey-50;
+    // @include transition();
+	}
+}
+
+header.sticky {
+	    @include transition();
+	background-color: $grey-700;
+	ul {
+		  // @include transition();
+			padding-top: 0.3em;
+			padding-bottom: 0.3em;
+	}
+	nav ul li a {
+    @include transition();
+		padding:0.3em 3em;
+		color: $grey-50;
+		border: 1px solid $grey-700;
+		&:hover {
+			background-color: $grey-700;
+			border: 1px solid $grey-50;
+			color: $grey-50;
+		}
+	}
+	#nav-logo {
+		display: none;
+	}
+}
+
+.nav-primary {
+	@include media(max-width 704px) {
+		display: none;
+	}
+}
+
+#nav-logo {
+	@include media(max-width 768px) {
+		display: none;
+	}
+}
+
+/* =========================================================
+ * Hamburger Styles
+========================================================= */
+
+.button {
+	display:inline;
+	position:absolute;
+	right:30px;
+	top:5px;
+	z-index:999;
+	font-size:30px;
+	@include media ( min-width 705px ) {
+		display: none;
+	}
+}
+.button a {
+	text-decoration:none;
+}
+.btn-open:after {
+	color: $grey-800;
+	content:"\f0c9";
+	font-family:"FontAwesome";
+	@include transition();
+}
+.btn-open:hover:after {
+	color: $orange-A200;
+}
+.btn-close:after {
+	color: #ffffff;
+	content:"\f00d";
+	font-family:"FontAwesome";
+	@include transition();
+}
+.btn-close:hover:after {
+	color: $orange-A200;
+}
+
+/* =========================================================
+ * Overlay Styles
+========================================================= */
+
+.overlay {
+	display:none;
+	position:fixed;
+	top:0;
+	left: 0;
+	height:100%;
+	width:100%;
+	background: $grey-500;
+	overflow:auto;
+}
+.wrap {
+	color:#e9e9e9;
+	text-align:center;
+	max-width:90%;
+	margin:0 auto;
+}
+.wrap ul.wrap-nav {
+	@include media( min-width $break-medium ) {
+		display: none;
+	}
+	border-bottom:1px solid $grey-50;
+	text-transform:capitalize;
+	padding:150px 0px 100px;
+}
+.wrap ul.wrap-nav li {
+	font-size:50px;
+	display:inline-block;
+	vertical-align:top;
+	width:24%;
+	position:relative;
+}
+.wrap ul.wrap-nav li a {
+	font-family: $br-gro;
+	color:$yellow-A100;
+	display:block;
+	padding:8px 0;
+	text-decoration:none;
+	@include transition();
+}
+.wrap ul.wrap-nav li a:hover {
+	color: $orange-A100;
+}
+.wrap ul.wrap-nav ul {
+	padding:20px 0;
+}
+.wrap ul.wrap-nav ul li {
+	display:block;
+	font-size:13px;
+	width:100%;
+	color:#e9e9e9;
+}
+.wrap ul.wrap-nav ul li a {
+	color:#f0f0f0;
+	font-family: "brandon-grotesque", serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 18px;
+}
+.wrap ul.wrap-nav ul li a:hover {
+	color:$orange-A100;
+}
+
+/* =========================================================
+ * Social Media Styles
+========================================================= */
+
+.social {
+	font-size:25px;
+	padding:20px;
+}
+.social p {
+	margin:0;
+	padding:20px 0 5px 0;
+	line-height:30px;
+	font-size:13px;
+}
+.social p a {
+	color: $grey-500;
+	text-decoration:none;
+	margin:0;
+	padding:0;
+}
+.social-icon {
+	width:80px;
+	height:50px;
+	background:#ffffff;
+	color: $grey-500;
+	display:inline-block;
+	margin:0 20px;
+	@include transition();
+}
+.social-icon:hover {
+	background: $orange-A100;
+	color: $grey-50;
+}
+.social-icon i {
+	margin-top:12px;
+}
+
+ 	@include media (max-width $break-medium) {
+	.wrap ul.wrap-nav>li {
+		width:100%;
+		padding:20px 0;
+		border-bottom:1px solid $grey-50;
+	}
+	.wrap ul.wrap-nav {
+		padding: 0px
+	}
+	nav ul {
+		opacity:0;
+		visibility:hidden;
+	}
+	.social {
+		color:#c1c1c1;
+		font-size:25px;
+		padding:15px 0;
+	}
+	.social-icon {
+		width:100%;
+		height:50px;
+		display:block;
+		margin:5px 0;
+	}
+}

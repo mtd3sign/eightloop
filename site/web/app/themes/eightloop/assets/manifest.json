@@ -1,0 +1,57 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "sss.js": {
+      "files": [
+        "scripts/sss.js"
+      ]
+    },
+    "flexslider.js": {
+      "files": [
+        "scripts/flexslider.js"
+      ]
+    },
+    "featherlight.min.js": {
+      "files": [
+        "scripts/featherlight.min.js"
+      ]
+    },
+    "featherlight.gallery.min.js": {
+      "files": [
+        "scripts/featherlight.gallery.min.js"
+      ]
+    },
+    "masonry.pkgd.min.js": {
+      "files": [
+        "scripts/masonry.pkgd.min.js"
+      ]
+    },
+    "imagesloaded.pkgd.min.js": {
+      "files": [
+        "scripts/imagesloaded.pkgd.min.js"
+      ]
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://eightloop.dev"
+  }
+}
