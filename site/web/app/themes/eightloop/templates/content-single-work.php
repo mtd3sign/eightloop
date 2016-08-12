@@ -17,7 +17,7 @@
               </div>
                 <!-- <p><?php echo $image['caption']; ?></p> -->
 
-        <?php endforeach; ?>
+        <?php endforeach; ?> 
 
       </div>
     </div>
@@ -31,7 +31,7 @@
       <hr>
 
       <div class="portfolio-item-tags">
-        <?php echo strip_tags(get_the_tag_list('<p>Skills: ',', ','</p>')); ?>
+        <?php the_tags( '<p>Skills: ', ', ', '</p>'); ?>
       </div>
       <hr>
       <div> <?php

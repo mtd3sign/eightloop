@@ -1,7 +1,3 @@
-<div class="container-portfolio-home">
-
-  <div class="portfolio-home">
-
 <?php
 
   $args = array(
@@ -11,8 +7,6 @@
   $query = new WP_Query($args);
 
 ?>
-
-<div class="page-portfolio">
 
   <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -49,9 +43,3 @@
 
   <?php endwhile; endif; ?>
   <?php wp_reset_postdata(); ?>
-
-
-
-</div>
-      </div>
-    </div>

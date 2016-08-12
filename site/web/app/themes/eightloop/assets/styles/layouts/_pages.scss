@@ -46,7 +46,8 @@
   }
   @include span-columns(12);
   h1 {
-    padding-top: 40px;
+    padding-top: 70px;
+    margin-bottom: 40px;
     color: $orange-A100;
   }
   p {
@@ -56,7 +57,7 @@
     }
     font-family: "brandon-grotesque", sans-serif;
     font-size: 1.375em;
-    line-height: 1.136em;
+    // line-height: 1.136em;
     font-weight: 500;
     color: $grey-300;
     @include media ( min-width $break-medium ) {

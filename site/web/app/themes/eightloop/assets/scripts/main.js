@@ -128,17 +128,17 @@ if ($(this).scrollTop() > 1){
   * ======================================================================== */
 
   // init Masonry
-  var $grid = $('.grid-portfolio').masonry({
-    itemSelector: '.grid-item-portfolio',
-    columnWidth: '.grid-sizer-portfolio',
-    percentPosition: true,
-    isAnimated: true,
-    isFitWidth: true
-  });
+  // var $grid = $('.grid-portfolio').masonry({
+  //   itemSelector: '.grid-item-portfolio',
+  //   columnWidth: '.grid-sizer-portfolio',
+  //   percentPosition: true,
+  //   isAnimated: true,
+  //   isFitWidth: true
+  // });
   // layout Masonry after each image loads
-  $grid.imagesLoaded().progress( function() {
-    $grid.masonry('layout');
-  });
+  // $grid.imagesLoaded().progress( function() {
+  //   $grid.masonry('layout');
+  // });
 
 
 

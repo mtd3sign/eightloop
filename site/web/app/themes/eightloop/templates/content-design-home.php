@@ -56,7 +56,7 @@
 
 
 </div>
-<div class="design-items"><h4><a href="<?php echo get_page_link(54); ?>">View my design blog</a></h4>
+<div class="design-items"><h4><a href="/design">View my design blog</a></h4>
 </div>
       </div>
     </div>

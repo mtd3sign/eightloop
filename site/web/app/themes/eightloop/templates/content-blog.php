@@ -22,6 +22,7 @@
                 echo '<p>'.get_the_content().'</p>';
                 echo '<p class="writing-blog-date">'.get_the_date('F Y').'</p>';
                 echo '<span class="blog-items"><h4><a href="'.get_the_permalink().'">See the full article</a></h4></span>';
+                echo '<hr class="header">';
                 // $image = get_field('image');
                 $image = 'https://unsplash.it/200/300/?random';
                 $size = 'full'; // (thumbnail, medium, large, full or custom size)

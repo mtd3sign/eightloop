@@ -53,7 +53,7 @@
 
       </div>
       <div class="portfolio-items">
-        <h4><a href="<?php echo get_page_link(36); ?>">View all portfolio items</a></h4>
+        <h4><a href="/portfolio">View all portfolio items</a></h4>
       </div>
   </div>
 </div>

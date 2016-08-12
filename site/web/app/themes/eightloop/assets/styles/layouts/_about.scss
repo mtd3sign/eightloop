@@ -1,17 +1,16 @@
 .container-about-home {
-  border-top: 2px solid $grey-100;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: $grey-50;
+  background-color: $white;
 }
 
 .about-home {
   @include outer-container();
   @include clearfix;
-  background-color: $grey-50;
+  background-color: $white;
 }
 
 .about-item {
@@ -20,8 +19,8 @@
   // text-align-last: center;
   @include span-columns(10);
   @include media ( min-width $break-medium ) {
-  @include span-columns(8);
-  @include shift(2);
+  @include span-columns(6);
+  @include shift(3);
   }
   h2 {
     margin-bottom: 0.5em;
@@ -29,6 +28,14 @@
       color: $grey-500;
       &:hover {
         color: $orange-A100;
+      }
+    }
+  }
+  p {
+    a {
+      color: $orange-A100;
+      &:hover {
+        color: $orange-A200;
       }
     }
   }
@@ -64,4 +71,20 @@
     padding-bottom: 4em;
     font-size: 0.8em;
     font-weight: 400;
+}
+
+.profile-image {
+  background-repeat: no-repeat;
+background-position: 50%;
+border-radius: 50%;
+width: 150px;
+height: 150px;
+left: 0;
+right: 0;
+margin: auto;
+margin-bottom: 2rem;
+}
+
+.profile-image img {
+border-radius: 50%;
 }

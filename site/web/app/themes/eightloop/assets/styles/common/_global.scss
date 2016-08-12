@@ -18,6 +18,8 @@ hr.header {
   @include span-columns(4);
   @include shift(4);
   border-bottom: 2px solid $grey-300;
+  margin-top: 30px;
+  margin-bottom:0;
 }
 
 
