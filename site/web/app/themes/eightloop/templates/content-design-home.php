@@ -27,8 +27,8 @@
                   $image = get_field('design_featured_image');
                   if( !empty($image) ):
                 ?>
-      <!-- <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> -->
-      <img class="design-image" src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" />
+      <img class="design-image" src="<?php echo $image['sizes']['portfolio']; ?>" alt="<?php echo $image['alt']; ?>" />
+      <!-- <img class="design-image" src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" /> -->
       <?php endif; ?>
       <!-- <div class="design-item-text">
         <h3>

@@ -39,6 +39,10 @@ function setup() {
   add_image_size('w800', 800, 9999);
   add_image_size('w640', 640, 9999);
   add_image_size('w360', 360, 9999);
+  add_image_size('slider', 1200, 480, array( 'center', 'center' ) ); // Hard crop center center
+  add_image_size('rectangle', 700, 420, array( 'center', 'center' ) ); // Hard crop center center
+  add_image_size('square', 480, 480, array( 'center', 'center' ) ); // Hard crop center center
+  add_image_size('portfolio', 600, 400, array( 'center', 'center' ) ); // Hard crop center center
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats

@@ -66,7 +66,7 @@ p {
   font-weight: 400;
   color: $text-dark;
   line-height: 1.25em;
-  @include media ( min-width $text-medium ) {
+  @include media ( min-width $break-medium ) {
     line-height: 1.375em;
   }
 }
