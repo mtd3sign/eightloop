@@ -42,7 +42,7 @@ function setup() {
   add_image_size('slider', 1200, 480, array( 'center', 'center' ) ); // Hard crop center center
   add_image_size('rectangle', 700, 420, array( 'center', 'center' ) ); // Hard crop center center
   add_image_size('square', 480, 480, array( 'center', 'center' ) ); // Hard crop center center
-  add_image_size('portfolio', 600, 400, array( 'center', 'center' ) ); // Hard crop center center
+  add_image_size('portfolio', 600, 300, array( 'center', 'center' ) ); // Hard crop center center
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
