@@ -122,6 +122,19 @@ if ($(this).scrollTop() > 1){
    $grid.masonry('layout');
  });
 
+ // init Masonry
+ var $grid = $('.masonry-grid').masonry({
+   itemSelector: '.masonry-portfolio-item',
+   columnWidth: '.masonry-portfolio-sizer',
+   percentPosition: true,
+   isAnimated: true,
+   isFitWidth: true
+ });
+ // layout Masonry after each image loads
+ $grid.imagesLoaded().progress( function() {
+   $grid.masonry('layout');
+ });
+
 
  /* ========================================================================
   * Masonry
