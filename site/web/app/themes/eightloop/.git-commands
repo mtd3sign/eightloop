@@ -1,2 +1,4 @@
 ansible-playbook server.yml -e env=staging --ask-become-pass
 ./deploy.sh staging staging.eightloop.io
+
+ssh-add ~/.ssh/id_rsa
