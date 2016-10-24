@@ -100,22 +100,41 @@ class Ai1wm_Export_Database {
 			   ->set_new_table_prefixes( $new_table_prefixes )
 			   ->set_old_replace_values( $old_table_values )
 			   ->set_new_replace_values( $new_table_values )
-   			   ->set_include_table_prefixes( $include_table_prefixes )
+			   ->set_include_table_prefixes( $include_table_prefixes )
 			   ->set_table_prefix_columns( ai1wm_table_prefix() . 'options', array( 'option_name' ) )
 			   ->set_table_prefix_columns( ai1wm_table_prefix() . 'usermeta', array( 'meta_key' ) );
 
+		// Status options
+		$client->set_table_query_clauses( ai1wm_table_prefix() . 'options', sprintf( " WHERE option_name != '%s' ", AI1WM_STATUS ) );
+
+		// Set current table index
+		if ( isset( $params['current_table_index'] ) ) {
+			$current_table_index = (int) $params['current_table_index'];
+ 		} else {
+			$current_table_index = 0;
+		}
+
 		// Export database
-		$client->export( ai1wm_database_path( $params ) );
+		$completed = $client->export( ai1wm_database_path( $params ), $current_table_index, 10 );
 
-		// Get archive file
-		$archive = new Ai1wm_Compressor( ai1wm_archive_path( $params ) );
+		// Export completed
+		if ( $completed ) {
+			// Get archive file
+			$archive = new Ai1wm_Compressor( ai1wm_archive_path( $params ) );
 
-		// Add database to archive
-		$archive->add_file( ai1wm_database_path( $params ), AI1WM_DATABASE_NAME );
-		$archive->close();
+			// Add database to archive
+			$archive->add_file( ai1wm_database_path( $params ), AI1WM_DATABASE_NAME );
+			$archive->close();
 
-		// Set progress
-		Ai1wm_Status::info( __( 'Done exporting database.', AI1WM_PLUGIN_NAME ) );
+			// Set progress
+			Ai1wm_Status::info( __( 'Done exporting database.', AI1WM_PLUGIN_NAME ) );
+		}
+
+		// Set current table index
+		$params['current_table_index'] = $current_table_index;
+
+		// Set completed flag
+		$params['completed'] = $completed;
 
 		return $params;
 	}

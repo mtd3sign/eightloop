@@ -68,7 +68,13 @@ class Ai1wm_Import_Controller {
 					foreach ( $hooks as  $hook ) {
 						try {
 							$params = call_user_func_array( $hook['function'], array( $params ) );
-						} catch ( Exception $e ) {
+						}
+						catch ( Ai1wm_Import_Retry_Exception $exception ) {
+							status_header( $exception->getCode() );
+							echo json_encode( array( 'message' => $exception->getMessage() ) );
+							exit;
+						}
+						catch ( Exception $e ) {
 							Ai1wm_Status::error( $e->getMessage(), __( 'Unable to import', AI1WM_PLUGIN_NAME ) );
 							exit;
 						}
@@ -87,7 +93,7 @@ class Ai1wm_Import_Controller {
 
 					// Do request
 					if ( $completed === false || ( $next = next( $filters ) ) && ( $params['priority'] = key( $filters ) ) ) {
-						return Ai1wm_Http::post( admin_url( 'admin-ajax.php?action=ai1wm_import' ), $params );
+						return Ai1wm_Http::get( admin_url( 'admin-ajax.php?action=ai1wm_import' ), $params );
 					}
 				}
 
@@ -105,6 +111,7 @@ class Ai1wm_Import_Controller {
 			apply_filters( 'ai1wm_import_gdrive', Ai1wm_Template::get_content( 'import/button-gdrive' ) ),
 			apply_filters( 'ai1wm_import_s3', Ai1wm_Template::get_content( 'import/button-s3' ) ),
 			apply_filters( 'ai1wm_import_onedrive', Ai1wm_Template::get_content( 'import/button-onedrive' ) ),
+			apply_filters( 'ai1wm_import_box', Ai1wm_Template::get_content( 'import/button-box' ) ),
 		);
 	}
 

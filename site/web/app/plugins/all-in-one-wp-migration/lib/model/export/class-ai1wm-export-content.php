@@ -27,12 +27,20 @@ class Ai1wm_Export_Content {
 
 	public static function execute( $params ) {
 
+		// Set current filesize
+		if ( isset( $params['current_filesize'] ) ) {
+			$current_filesize = (int) $params['current_filesize'];
+		} else {
+			$current_filesize = 0;
+		}
+
 		// Set content offset
 		if ( isset( $params['content_offset'] ) ) {
 			$content_offset = (int) $params['content_offset'];
 		} else {
 			$content_offset = 0;
 		}
+
 		// Set filemap offset
 		if ( isset( $params['filemap_offset'] ) ) {
 			$filemap_offset = (int) $params['filemap_offset'];
@@ -88,21 +96,27 @@ class Ai1wm_Export_Content {
 				try {
 
 					// Add file to archive
-					if ( ( $content_offset = $archive->add_file( WP_CONTENT_DIR . DIRECTORY_SEPARATOR . $path, $path, $content_offset, 10 ) ) ) {
+					if ( ( $current_offset = $archive->add_file( WP_CONTENT_DIR . DIRECTORY_SEPARATOR . $path, $path, $current_filesize, $content_offset, 10 ) ) ) {
 
-						// Set progress
-						if ( ( $processed += $content_offset ) ) {
+						// What percent of files have we processed?
+						if ( ( $processed += ( $current_offset - $content_offset ) ) ) {
 							$progress = (int) ( ( $processed / $total_size ) * 100 );
 						}
 
 						// Set progress
 						Ai1wm_Status::info( sprintf( __( 'Archiving %d files...<br />%d%% complete', AI1WM_PLUGIN_NAME ), $total_files, $progress ) );
 
+						// Set current filesize
+						$params['current_filesize'] = $archive->get_current_filesize();
+
 						// Set content offset
-						$params['content_offset'] = $content_offset;
+						$params['content_offset'] = $current_offset;
 
 						// Set filemap offset
 						$params['filemap_offset'] = $filemap_offset;
+
+						// Set processed files
+						$params['processed'] = $processed;
 
 						// Set completed flag
 						$params['completed'] = false;
@@ -112,6 +126,14 @@ class Ai1wm_Export_Content {
 
 						return $params;
 					}
+
+					// Increment processed files
+					if ( empty( $content_offset ) ) {
+						$processed += $archive->get_current_filesize();
+					}
+
+					// Set current filesize
+					$current_filesize = 0;
 
 					// Set content offset
 					$content_offset = 0;
@@ -123,9 +145,6 @@ class Ai1wm_Export_Content {
 					// Skip bad file permissions
 				}
 
-				// Increment processed files
-				$processed += $archive->get_current_filesize();
-
 				// More than 10 seconds have passed, break and do another request
 				if ( ( microtime( true ) - $start ) > 10 ) {
 					$completed = false;
@@ -133,8 +152,12 @@ class Ai1wm_Export_Content {
 				}
 			}
 
+			// Close the archive file
 			$archive->close();
 		}
+
+		// Set current filesize
+		$params['current_filesize'] = $current_filesize;
 
 		// Set content offset
 		$params['content_offset'] = $content_offset;

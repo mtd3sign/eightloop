@@ -160,6 +160,10 @@ require_once AI1WM_CONTROLLER_PATH .
 
 require_once AI1WM_CONTROLLER_PATH .
 			DIRECTORY_SEPARATOR .
+			'class-ai1wm-status-controller.php';
+
+require_once AI1WM_CONTROLLER_PATH .
+			DIRECTORY_SEPARATOR .
 			'class-ai1wm-resolve-controller.php';
 
 require_once AI1WM_CONTROLLER_PATH .
@@ -258,6 +262,18 @@ require_once AI1WM_IMPORT_PATH .
 			DIRECTORY_SEPARATOR .
 			'class-ai1wm-import-clean.php';
 
+require_once AI1WM_HTTP_PATH .
+			DIRECTORY_SEPARATOR .
+			'class-ai1wm-http-stream.php';
+
+require_once AI1WM_HTTP_PATH .
+			DIRECTORY_SEPARATOR .
+			'class-ai1wm-http-curl.php';
+
+require_once AI1WM_HTTP_PATH .
+			DIRECTORY_SEPARATOR .
+			'class-ai1wm-http-factory.php';
+
 require_once AI1WM_MODEL_PATH .
 			DIRECTORY_SEPARATOR .
 			'class-ai1wm-deprecated.php';
@@ -310,46 +326,3 @@ require_once AI1WM_MODEL_PATH .
 			DIRECTORY_SEPARATOR .
 			'class-ai1wm-http.php';
 
-require_once AI1WM_MODEL_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-streams.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-archive-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-backups-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-export-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-import-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-http-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-not-accessible-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-not-found-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-not-readable-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-not-writable-exception.php';
-
-require_once AI1WM_EXCEPTION_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wm-storage-exception.php';

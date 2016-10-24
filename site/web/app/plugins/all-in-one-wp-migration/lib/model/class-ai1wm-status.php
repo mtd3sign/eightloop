@@ -54,9 +54,8 @@ class Ai1wm_Status {
 	}
 
 	public static function log( $data = array() ) {
-		if ( $handle = fopen( ai1wm_status_path(), 'w' ) ) {
-			fwrite( $handle, json_encode( $data ) );
-			fclose( $handle );
+		if ( ! defined( 'DOING_CRON' ) ) {
+			update_option( AI1WM_STATUS, $data );
 		}
 	}
 }

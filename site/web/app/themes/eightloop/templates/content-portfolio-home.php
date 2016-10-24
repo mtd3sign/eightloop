@@ -6,7 +6,7 @@
 
   $args = array(
     'post_type' => 'portfolio',
-    'posts_per_page' => '2',
+    'posts_per_page' => '6',
   );
 
   $query = new WP_Query($args);
@@ -25,8 +25,8 @@
             $image = get_field('portfolio_featured_image');
             if( !empty($image) ):
           ?>
-            <img class="portfolio-image" src="<?php echo $image['sizes']['portfolio']; ?>" alt="<?php echo $image['alt']; ?>" />
-            <!-- <img class="portfolio-image" src="https://unsplash.it/900/450/?random" alt="<?php echo $image['alt']; ?>" /> -->
+            <img class="portfolio-image" src="<?php echo $image['sizes']['square']; ?>" alt="<?php echo $image['alt']; ?>" />
+            <!-- <img class="portfolio-image" src="https://unsplash.it/900/900/?random" alt="<?php echo $image['alt']; ?>" /> -->
             <?php endif; ?>
 
             <!-- <div class="portfolio-item-text">
