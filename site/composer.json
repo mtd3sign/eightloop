@@ -35,7 +35,7 @@
   "type": "package",
   "package": {
     "name": "advanced-custom-fields/advanced-custom-fields-pro",
-    "version": "5.0",
+    "version": "5.4.8",
     "type": "wordpress-plugin",
     "dist": {
       "type": "zip",
@@ -48,13 +48,14 @@
     "php": ">=5.5",
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.4.2",
+    "johnpbloch/wordpress": "4.6.1",
     "oscarotero/env": "^1.0",
-    "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/medium": "1.3.0",
-    "wpackagist-plugin/all-in-one-wp-migration": "5.42",
-    "wpackagist-plugin/custom-post-type-ui": "1.3.4",
-    "wpackagist-plugin/page-links-to": "2.9.6"
+    "roots/wp-password-bcrypt": "dev-trunk",
+    "wpackagist-plugin/medium": "dev-trunk",
+    "wpackagist-plugin/all-in-one-wp-migration": "dev-trunk",
+    "wpackagist-plugin/custom-post-type-ui": "dev-trunk",
+    "wpackagist-plugin/page-links-to": "dev-trunk",
+    "wpackagist-plugin/contact-form-7": "dev-trunk"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

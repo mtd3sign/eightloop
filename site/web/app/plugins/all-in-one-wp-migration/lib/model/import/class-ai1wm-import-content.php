@@ -100,18 +100,54 @@ class Ai1wm_Import_Content {
 
 		// Set extract paths
 		foreach ( $blogs as $blog ) {
-			$old_paths[] = ai1wm_sites_path( $blog->Old->Id );
-			$new_paths[] = ai1wm_sites_path( $blog->New->Id );
+			if ( ai1wm_main_site( $blog->Old->Id ) === false ) {
+				if ( defined( 'UPLOADBLOGSDIR' ) ) {
+					// Old sites dir style
+					$old_paths[] = ai1wm_files_path( $blog->Old->Id );
+					$new_paths[] = ai1wm_files_path( $blogs->New->Id );
+
+					// New sites dir style
+					$old_paths[] = ai1wm_sites_path( $blog->Old->Id );
+					$new_paths[] = ai1wm_files_path( $blog->New->Id );
+				} else {
+					// Old sites dir style
+					$old_paths[] = ai1wm_files_path( $blog->Old->Id );
+					$new_paths[] = ai1wm_sites_path( $blog->New->Id );
+
+					// New sites dir style
+					$old_paths[] = ai1wm_sites_path( $blog->Old->Id );
+					$new_paths[] = ai1wm_sites_path( $blog->New->Id );
+				}
+			}
+		}
+
+		// Set base site extract paths (should be added at the end of arrays)
+		foreach ( $blogs as $blog ) {
+			if ( ai1wm_main_site( $blog->Old->Id ) === true ) {
+				$old_paths[] = ai1wm_sites_path( $blog->Old->Id );
+				$new_paths[] = ai1wm_sites_path( $blog->New->Id );
+			}
 		}
 
 		while ( $archive->has_not_reached_eof() ) {
 			try {
 
-				// Extract a file from archive to WP_CONTENT_DIR
-				if ( ( $content_offset = $archive->extract_one_file_to( WP_CONTENT_DIR, array( AI1WM_PACKAGE_NAME, AI1WM_MULTISITE_NAME, AI1WM_DATABASE_NAME, AI1WM_MUPLUGINS_NAME ), $old_paths, $new_paths, $content_offset, 10 ) ) ) {
+				// Exclude WordPress files
+				$exclude_files = array_keys( _get_dropins() );
 
-					// Set progress
-					if ( ( $processed += $content_offset ) ) {
+				// Exclude plugin files
+				$exclude_files = array_merge( $exclude_files, array(
+					AI1WM_PACKAGE_NAME,
+					AI1WM_MULTISITE_NAME,
+					AI1WM_DATABASE_NAME,
+					AI1WM_MUPLUGINS_NAME,
+				) );
+
+				// Extract a file from archive to WP_CONTENT_DIR
+				if ( ( $current_offset = $archive->extract_one_file_to( WP_CONTENT_DIR, $exclude_files, $old_paths, $new_paths, $content_offset, 10 ) ) ) {
+
+					// What percent of files have we processed?
+					if ( ( $processed += ( $current_offset - $content_offset ) ) ) {
 						$progress = (int) ( ( $processed / $total_size ) * 100 );
 					}
 
@@ -119,10 +155,13 @@ class Ai1wm_Import_Content {
 					Ai1wm_Status::info( sprintf( __( 'Restoring %d files...<br />%d%% complete', AI1WM_PLUGIN_NAME ), $total_files, $progress ) );
 
 					// Set content offset
-					$params['content_offset'] = $content_offset;
+					$params['content_offset'] = $current_offset;
 
 					// Set archive offset
 					$params['archive_offset'] = $archive_offset;
+
+					// Set processed files
+					$params['processed'] = $processed;
 
 					// Set completed flag
 					$params['completed'] = false;
@@ -131,6 +170,11 @@ class Ai1wm_Import_Content {
 					$archive->close();
 
 					return $params;
+				}
+
+				// Increment processed files
+				if ( empty( $content_offset ) ) {
+					$processed += $archive->get_current_filesize();
 				}
 
 				// Set content offset
@@ -142,9 +186,6 @@ class Ai1wm_Import_Content {
 			} catch ( Exception $e ) {
 				// Skip bad file permissions
 			}
-
-			// Increment processed files
-			$processed += $archive->get_current_filesize();
 
 			// More than 10 seconds have passed, break and do another request
 			if ( ( microtime( true ) - $start ) > 10 ) {

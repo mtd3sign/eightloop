@@ -6,7 +6,7 @@
 
   $args = array(
        'post_type' => 'design',
-       'posts_per_page' => 2,
+       'posts_per_page' => 6,
        );
 
   $query = new WP_Query($args);
@@ -27,7 +27,7 @@
                   $image = get_field('design_featured_image');
                   if( !empty($image) ):
                 ?>
-      <img class="design-image" src="<?php echo $image['sizes']['portfolio']; ?>" alt="<?php echo $image['alt']; ?>" />
+      <img class="design-image" src="<?php echo $image['sizes']['square']; ?>" alt="<?php echo $image['alt']; ?>" />
       <!-- <img class="design-image" src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" /> -->
       <?php endif; ?>
       <!-- <div class="design-item-text">

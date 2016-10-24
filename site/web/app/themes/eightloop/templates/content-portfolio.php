@@ -18,7 +18,7 @@
                   $image = get_field('portfolio_featured_image');
                   if( !empty($image) ):
                 ?>
-      <img class="portfolio-image" src="<?php echo $image['sizes']['portfolio']; ?>" alt="<?php echo $image['alt']; ?>" />
+      <img class="portfolio-image" src="<?php echo $image['sizes']['square']; ?>" alt="<?php echo $image['alt']; ?>" />
       <!-- <img class="portfolio-image" src="https://unsplash.it/600/300/?random" alt="<?php echo $image['alt']; ?>" /> -->
       <?php endif; ?>
       <!-- <div class="portfolio-item-text">

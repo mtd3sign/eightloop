@@ -36,8 +36,9 @@ if ( defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 	// Delete any options or other data stored in the database here
 	delete_option( AI1WM_URL_IP );
-	delete_option( AI1WM_URL_TRANSPORT );
+	delete_option( AI1WM_URL_ADAPTER );
 	delete_option( AI1WM_SECRET_KEY );
 	delete_option( AI1WM_AUTH_USER );
 	delete_option( AI1WM_AUTH_PASSWORD );
+	delete_option( AI1WM_STATUS );
 }

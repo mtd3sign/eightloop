@@ -796,16 +796,28 @@ class Medium_Admin {
         "Content-Type" => "application/json"
       ));
     } catch (Exception $e) {
-      // Retry once if we got a timeout
+      // Retry on the server failure response codes
+      $retry_response_codes = array(
+        500,
+        502,
+        503,
+        504
+      );
+
+      // Retry once for timeout or server error
       if ($e->getCode() == -2) {
         error_log("RETRYING POST $post->ID '$post->post_title' due to timeout, delaying...");
         sleep(5);
-        $created_medium_post = self::_medium_request("POST", $path, $medium_user->token, $data, array(
-          "Content-Type" => "application/json"
-        ));
+      } else if (in_array($e->getCode(), $retry_response_codes)) {
+        error_log("RETRYING POST $post->ID '$post->post_title' due to response code $code, delaying...");
+        sleep(5);
       } else {
         throw $e;
       }
+
+      $created_medium_post = self::_medium_request("POST", $path, $medium_user->token, $data, array(
+          "Content-Type" => "application/json"
+      ));
     }
     $medium_post->id = $created_medium_post->id;
 
@@ -972,10 +984,26 @@ class Medium_Admin {
    * Given a post, returns content suitable for sending to Medium.
    */
   private static function _prepare_content($post) {
+    // If Valenti theme is installed, check for audio or video featured image embeds.
+    // Prepend the embed to the post_content when preparing the content.
+    // See: http://themeforest.net/item/valenti-wordpress-hd-review-magazine-news-theme/5888961
+    if (function_exists('cb_featured_image')) {
+      $iframe_url = NULL;
+      if (get_post_format($post->post_id) == 'video') {
+        $iframe_url = get_post_meta($post->ID, 'cb_video_embed_code_post', true);
+      }
+      if (get_post_format($post->post_id) == 'audio') {
+        $iframe_url = get_post_meta($post->ID, 'cb_soundcloud_embed_code_post', true);
+      }
+      if (isset($iframe_url)) {
+        $post->post_content = sprintf('%s<br />%s', $iframe_url, $post->post_content);
+      }
+    }
+
     if (function_exists('has_post_thumbnail') && has_post_thumbnail($post)) {
       // If $post->post_content starts with an <img> tag, do not use the featured image
-      if (strpos($post->post_content, "<img") != 0) {
-        $post_content = sprintf('<img src="%s" /><br />%s', get_the_post_thumbnail_url($post), do_shortcode(wpautop($post->post_content)));
+      if (strpos($post->post_content, "<img") !== 0) {
+        $post_content = sprintf('<img src="%s" /><br />%s', get_the_post_thumbnail_url($post, 'full'), do_shortcode(wpautop($post->post_content)));
       } else {
         $post_content = do_shortcode(wpautop($post->post_content));
       }
@@ -1071,7 +1099,7 @@ class Medium_Admin {
       if ($error_code == "http_request_failed" && strpos($message, "timed out") !== false) {
         throw new Exception($message, -2); // our custom code for timeouts
       }
-      throw new Exception($message, 500);
+      throw new Exception($message, $code);
     }
 
     if (false === strpos($content_type, "json")) {

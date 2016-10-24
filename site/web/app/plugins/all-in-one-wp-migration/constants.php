@@ -27,7 +27,6 @@ $local = array(
 	'iliev.local',
 	'develop.servmask.com',
 	'Borislav-MacBook-Pro.local',
-	'Simeon-PC',
 );
 
 if ( function_exists( 'gethostname' ) && in_array( gethostname(), $local ) ) {
@@ -39,7 +38,7 @@ if ( function_exists( 'gethostname' ) && in_array( gethostname(), $local ) ) {
 // ==================
 // = Plugin Version =
 // ==================
-define( 'AI1WM_VERSION', '5.42' );
+define( 'AI1WM_VERSION', '5.52' );
 
 // ===============
 // = Plugin Name =
@@ -92,6 +91,11 @@ define( 'AI1WM_EXPORT_PATH', AI1WM_MODEL_PATH . DIRECTORY_SEPARATOR . 'export' )
 define( 'AI1WM_IMPORT_PATH', AI1WM_MODEL_PATH . DIRECTORY_SEPARATOR . 'import' );
 
 // =============
+// = Http Path =
+// =============
+define( 'AI1WM_HTTP_PATH', AI1WM_MODEL_PATH . DIRECTORY_SEPARATOR . 'http' );
+
+// =============
 // = View Path =
 // =============
 define( 'AI1WM_TEMPLATES_PATH', AI1WM_LIB_PATH . DIRECTORY_SEPARATOR . 'view' );
@@ -100,11 +104,6 @@ define( 'AI1WM_TEMPLATES_PATH', AI1WM_LIB_PATH . DIRECTORY_SEPARATOR . 'view' );
 // = Set Bandar Path =
 // ===================
 define( 'BANDAR_TEMPLATES_PATH', AI1WM_TEMPLATES_PATH );
-
-// ==================
-// = Exception Path =
-// ==================
-define( 'AI1WM_EXCEPTION_PATH', AI1WM_LIB_PATH . DIRECTORY_SEPARATOR . 'exception' );
 
 // ===============
 // = Vendor Path =
@@ -186,10 +185,10 @@ define( 'AI1WM_ERROR_NAME', 'error.log' );
 // ==========
 define( 'AI1WM_URL_IP', 'ai1wm_url_ip' );
 
-// =================
-// = URL Transport =
-// =================
-define( 'AI1WM_URL_TRANSPORT', 'ai1wm_url_transport' );
+// ===============
+// = URL Adapter =
+// ===============
+define( 'AI1WM_URL_ADAPTER', 'ai1wm_url_adapter' );
 
 // ==============
 // = Secret Key =
@@ -226,6 +225,11 @@ define( 'AI1WM_MS_FILES_REWRITING', 'ms_files_rewriting' );
 // ===============
 define( 'AI1WM_UPDATER', 'ai1wm_updater' );
 
+// ==============
+// = Status Key =
+// ==============
+define( 'AI1WM_STATUS', 'ai1wm_status' );
+
 // =================
 // = Support Email =
 // =================
@@ -257,6 +261,11 @@ if ( ! defined( 'WP_CONTENT_DIR' ) ) {
 // = Uploads Path =
 // ================
 define( 'AI1WM_UPLOADS_PATH', 'uploads' );
+
+// ==============
+// = Blogs Path =
+// ==============
+define( 'AI1WM_BLOGSDIR_PATH', 'blogs.dir' );
 
 // ==============
 // = Sites Path =
@@ -530,4 +539,34 @@ if ( ! defined( 'AI1WMOE_PLUGIN_KEY' ) ) {
 // ============================
 if ( ! defined( 'AI1WMOE_PLUGIN_SHORT' ) ) {
 	define( 'AI1WMOE_PLUGIN_SHORT', 'onedrive' );
+}
+
+// ==========================
+// = Box Extension Base Dir =
+// ==========================
+if ( defined( 'AI1WMBE_PLUGIN_BASENAME' ) ) {
+	define( 'AI1WMBE_PLUGIN_BASEDIR', dirname( AI1WMBE_PLUGIN_BASENAME ) );
+} else {
+	define( 'AI1WMBE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-box-extension' );
+}
+
+// =======================
+// = Box Extension About =
+// =======================
+if ( ! defined( 'AI1WMBE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMBE_PLUGIN_ABOUT', 'https://servmask.com/products/box-extension/about' );
+}
+
+// =====================
+// = Box Extension Key =
+// =====================
+if ( ! defined( 'AI1WMBE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMBE_PLUGIN_KEY', 'ai1wmbe_plugin_key' );
+}
+
+// =======================
+// = Box Extension Short =
+// =======================
+if ( ! defined( 'AI1WMBE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMBE_PLUGIN_SHORT', 'box' );
 }

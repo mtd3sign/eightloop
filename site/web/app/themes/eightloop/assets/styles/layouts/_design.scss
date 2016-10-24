@@ -8,7 +8,7 @@
   // background-image: url('../images/sea-background7.jpg');
   // background-position: center;
   // background-size: cover;
-  background-color: $white; 
+  background-color: $white;
 
 }
 
@@ -23,17 +23,19 @@
     .design-item {
       transition: 0.3s all ease;
       position: relative;
+      height: 100%;
+      overflow: hidden;
       // background-color: $grey-50;
       @include span-columns(12);
       @include omega(1n);
       margin-bottom: 20px;
       @include media ( min-width $break-medium ) {
         @include omega-reset(1n);
-        @include span-columns(6);
-        @include omega(2n);
+        @include span-columns(4);
+        @include omega(3n);
       }
       @include media ( min-width $break-large ) {
-        @include omega-reset(2n);
+        @include omega-reset(1n);
         @include span-columns(4);
         @include omega(3n);
     }
